@@ -1,0 +1,13 @@
+<header class="topbar">
+  <div>
+    <a class="brand" href="/">AeroCommand</a>
+  </div>
+  <nav class="topbar-nav">
+    <% if (user) { %>
+      <span class="nav-text"><%= user.name %></span>
+      <span class="nav-role"><%= user.role %></span>
+    <% } else { %>
+      <a href="/login" class="nav-link">Login</a>
+    <% } %>
+  </nav>
+</header>

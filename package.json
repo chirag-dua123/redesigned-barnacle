@@ -1,0 +1,34 @@
+{
+  "name": "probable-fishstick",
+  "version": "1.0.0",
+  "description": "AeroCommand is an airport operations dashboard built with Node.js, Express, MongoDB, and EJS. The system is meant to support staff who manage flights, gates, and refueling activity through authenticated and role-protected workflows.",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "dev:memory": "node bin/start-in-memory.js",
+    "start": "node index.js",
+    "seed": "node bin/seed.js",
+    "verify": "node bin/verify.js",
+    "build:css": "tailwindcss -i ./public/css/input.css -o ./public/css/output.css"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.4.2",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.7.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "mongodb-memory-server": "^11.2.0",
+    "nodemon": "^3.1.14",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17"
+  }
+}

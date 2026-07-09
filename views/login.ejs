@@ -1,0 +1,72 @@
+<%- include("partials/header", { pageTitle }) %>
+<%- include("partials/navbar", { user }) %>
+
+<main class="page page-login">
+  <section class="panel auth-panel">
+    <div class="panel-header">
+      <p class="eyebrow">Operations Access</p>
+      <h1>Sign in to AeroCommand</h1>
+      <p class="muted">Use a seeded staff account to access the protected dashboards.</p>
+    </div>
+
+    <!-- Feedback messages -->
+    <div id="auth-error" class="hidden"></div>
+    <div id="auth-success" class="hidden"></div>
+
+    <!-- Login form -->
+    <form id="login-form" class="stack-md" method="post" action="/api/auth/login">
+      <label class="field">
+        <span>Email</span>
+        <input type="email" name="email" placeholder="controller@aerocommand.local" required>
+      </label>
+
+      <label class="field">
+        <span>Password</span>
+        <input type="password" name="password" placeholder="Password123!" required>
+      </label>
+
+      <button class="button button-primary" type="submit">Sign In</button>
+      <p class="muted" style="text-align:center">
+        Don't have an account? <a href="#" id="show-register">Register here</a>
+      </p>
+    </form>
+
+    <!-- Register form (hidden by default) -->
+    <form id="register-form" class="stack-md hidden" method="post" action="/api/auth/register">
+      <label class="field">
+        <span>Name</span>
+        <input type="text" name="name" placeholder="Full name" required>
+      </label>
+
+      <label class="field">
+        <span>Email</span>
+        <input type="email" name="email" placeholder="user@aerocommand.local" required>
+      </label>
+
+      <label class="field">
+        <span>Password</span>
+        <input type="password" name="password" placeholder="Password123!" required>
+      </label>
+
+      <label class="field">
+        <span>Role</span>
+        <select name="role">
+          <option value="controller">Controller</option>
+          <option value="ground_staff">Ground Staff</option>
+        </select>
+      </label>
+
+      <button class="button button-primary" type="submit">Register</button>
+      <p class="muted" style="text-align:center">
+        Already have an account? <a href="#" id="show-login">Sign in here</a>
+      </p>
+    </form>
+
+    <div class="seed-note">
+      <p><strong>Controller:</strong> controller@aerocommand.local / Password123!</p>
+      <p><strong>Ground:</strong> ground@aerocommand.local / Password123!</p>
+    </div>
+  </section>
+</main>
+
+<%- include("partials/footer") %>

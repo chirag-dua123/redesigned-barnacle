@@ -1,0 +1,62 @@
+<%- include("partials/header", { pageTitle }) %>
+<%- include("partials/navbar", { user }) %>
+
+<main class="page">
+  <section class="hero-strip">
+    <div>
+      <p class="eyebrow">Ground Operations</p>
+      <h1>Ground control board</h1>
+      <p class="muted">Track gate occupancy, assign aircraft, and record refueling activity.</p>
+    </div>
+    <button id="logout-btn" class="button button-secondary">Logout</button>
+  </section>
+
+  <section class="grid-two">
+    <article class="panel">
+      <h2>Gate matrix</h2>
+      <div id="gate-grid" class="gate-grid">
+        <p class="muted">Loading gates…</p>
+      </div>
+    </article>
+
+    <article class="panel">
+      <h2>Ground actions</h2>
+      <div class="stack-md">
+        <!-- Gate assignment -->
+        <h3>Assign gate</h3>
+        <label class="field">
+          <span>Gate</span>
+          <select id="assign-gate-select">
+            <option value="">— select gate —</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Flight</span>
+          <select id="assign-flight-select">
+            <option value="">— select flight —</option>
+          </select>
+        </label>
+        <button id="assign-gate-btn" class="button button-primary" type="button">Assign gate</button>
+
+        <!-- Refueling -->
+        <h3>Log refueling</h3>
+        <label class="field">
+          <span>Flight</span>
+          <select id="refuel-flight-select">
+            <option value="">— select flight —</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Gallons fueled</span>
+          <input id="refuel-gallons" type="number" min="1" placeholder="5000">
+        </label>
+        <button id="refuel-btn" class="button button-primary" type="button">Log refueling</button>
+      </div>
+    </article>
+  </section>
+
+  <!-- Toast container for notifications -->
+  <div id="toast-container"></div>
+</main>
+
+<%- include("partials/footer") %>

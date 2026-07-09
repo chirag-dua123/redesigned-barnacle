@@ -1,0 +1,64 @@
+<%- include("partials/header", { pageTitle }) %>
+<%- include("partials/navbar", { user }) %>
+
+<main class="page">
+  <section class="hero-strip">
+    <div>
+      <p class="eyebrow">Air Traffic Control</p>
+      <h1>Controller board</h1>
+      <p class="muted">Review flights, update statuses, and monitor runway-facing operations.</p>
+    </div>
+    <button id="logout-btn" class="button button-secondary">Logout</button>
+  </section>
+
+  <section class="grid-two">
+    <article class="panel">
+      <h2>Flight board</h2>
+      <div class="table-shell">
+        <table>
+          <thead>
+            <tr>
+              <th>Flight</th>
+              <th>Route</th>
+              <th>Status</th>
+              <th>ETD</th>
+            </tr>
+          </thead>
+          <tbody id="flights-tbody">
+            <tr>
+              <td colspan="4" style="text-align:center">Loading flights…</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <article class="panel">
+      <h2>Controller actions</h2>
+      <div class="stack-md">
+        <label class="field">
+          <span>Flight</span>
+          <select id="flight-select">
+            <option value="">— select flight —</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>New status</span>
+          <select id="status-select">
+            <option value="scheduled">scheduled</option>
+            <option value="boarding">boarding</option>
+            <option value="departed">departed</option>
+            <option value="arrived">arrived</option>
+            <option value="cancelled">cancelled</option>
+          </select>
+        </label>
+        <button id="update-status-btn" class="button button-primary" type="button">Update status</button>
+      </div>
+    </article>
+  </section>
+
+  <!-- Toast container for notifications -->
+  <div id="toast-container"></div>
+</main>
+
+<%- include("partials/footer") %>
